@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sangsoo Nam | Unlimited Power</title>
+    <description>I&#39;m a full-stack developer who likes learning, discussing, and solving interesting problems. These days, I&#39;m focusing on Android development at Spotify
+</description>
+    <link>/</link>
+    <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Tue, 29 Dec 2015 20:53:18 +0100</pubDate>
+    <lastBuildDate>Tue, 29 Dec 2015 20:53:18 +0100</lastBuildDate>
+    <generator>Jekyll v3.0.1</generator>
+    
+  </channel>
+</rss>

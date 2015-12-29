@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Bash Pattern</title>
+  <meta name="description" content="Variable">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="/2015/12/28/bash-pattern.html">
+  <link rel="alternate" type="application/rss+xml" title="Sangsoo Nam | Unlimited Power" href="/feed.xml">
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-71739765-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+</head>
+
+  <body>
+    <header class="site-header">
+  <div class="wrapper">
+    <a class="site-title" href="/">Sangsoo Nam | Unlimited Power</a>
+  </div>
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Bash Pattern</h1>
+    <p class="post-meta"><time datetime="2015-12-28T00:00:00+01:00" itemprop="datePublished">Dec 28, 2015</time></p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <h2 id="variable">Variable</h2>
+
+<p>A variable is a symbolic name for information. In the bash, it can be declared with an equal sign <code class="highlighter-rouge">=</code>. Unlike other languages such as C and Java, a variable type is not needed.</p>
+
+<figure class="highlight"><pre><code class="language-sh" data-lang="sh">❯ <span class="nv">VAR</span><span class="o">=</span>28</code></pre></figure>
+
+<p>To use/expand the variable, you can simply type its name used in declaration with a prefix <code class="highlighter-rouge">$</code> . If you use the variable with joining a value, you need to wrap the variable explicitly with <code class="highlighter-rouge">${}</code></p>
+
+<figure class="highlight"><pre><code class="language-sh" data-lang="sh">❯ <span class="nb">echo</span> <span class="nv">$VAR</span>
+28
+❯ <span class="nb">echo</span> <span class="k">${</span><span class="nv">VAR</span><span class="k">}</span>iable
+28iable</code></pre></figure>
+
+<p>Variables could reference any value. There is one thing you have to care. When you declare a variable to reference a string, the string could have white spaces. To store the string and reference it properly, it is necessary to wrap with double quotes <code class="highlighter-rouge">""</code>. If a string doesn’t have any white spaces, it is an optional.</p>
+
+<figure class="highlight"><pre><code class="language-sh" data-lang="sh">❯ <span class="nv">VAR</span><span class="o">=</span><span class="s2">"A B C"</span>
+❯ <span class="nb">echo</span> <span class="nv">$VAR</span>
+A B C</code></pre></figure>
+
+<h2 id="pattern-removal">Pattern Removal</h2>
+
+<p>Once you declare a variable, there are several operations to modify a expanded value. A pattern removal operation is one of them. In here, a pattern is different from a regular expression. The pattern has special characters having the following meanings:</p>
+
+<ul>
+  <li>* Matches any string, including the null string.</li>
+  <li>? Matches any single character.</li>
+  <li>[…] Matches any one of the enclosed characters.</li>
+</ul>
+
+<p><code class="highlighter-rouge">%</code> is a pattern removal operator to remove a trailing string. If there is no matched string, it will return the original string.</p>
+
+<figure class="highlight"><pre><code class="language-sh" data-lang="sh">❯ <span class="nv">REPLY</span><span class="o">=</span><span class="s2">"HEY! HELLO"</span>
+❯ <span class="nb">echo</span> <span class="k">${</span><span class="nv">REPLY</span><span class="p">%O</span><span class="k">}</span>
+HEY! HELL
+❯ <span class="nb">echo</span> <span class="k">${</span><span class="nv">REPLY</span><span class="p">%?</span><span class="k">}</span>
+HEY! HELL
+❯ <span class="nb">echo</span> <span class="k">${</span><span class="nv">REPLY</span><span class="p">%[oO]</span><span class="k">}</span>
+HEY! HELL
+❯ <span class="nb">echo</span> <span class="k">${</span><span class="nv">REPLY</span><span class="p">%X</span><span class="k">}</span>
+HEY! HELLO</code></pre></figure>
+
+<p>There are two pattern removal operators. One is <code class="highlighter-rouge">%</code> and the other is <code class="highlighter-rouge">%%</code>. <code class="highlighter-rouge">%</code> supports a shortest pattern matching and <code class="highlighter-rouge">%%</code> supports a longest pattern matching. Here are examples.</p>
+
+<figure class="highlight"><pre><code class="language-sh" data-lang="sh">❯ <span class="nb">echo</span> <span class="k">${</span><span class="nv">REPLY</span><span class="p">%L*</span><span class="k">}</span>
+HEY! HEL
+❯ <span class="nb">echo</span> <span class="k">${</span><span class="nv">REPLY</span><span class="p">%%L*</span><span class="k">}</span>
+HEY! HE</code></pre></figure>
+
+<p><code class="highlighter-rouge">#</code> is a similar operator like <code class="highlighter-rouge">%</code>. The only difference is that it is to remove a beginning string. There are also similar two operators: <code class="highlighter-rouge">#</code> and <code class="highlighter-rouge">##</code></p>
+
+<figure class="highlight"><pre><code class="language-sh" data-lang="sh">❯ <span class="nv">REPLY</span><span class="o">=</span><span class="s2">"HEY! HELLO"</span>
+❯ <span class="nb">echo</span> <span class="k">${</span><span class="nv">REPLY</span><span class="p">#H</span><span class="k">}</span>
+EY! HELLO
+❯ <span class="nb">echo</span> <span class="k">${</span><span class="nv">REPLY</span><span class="p">#*H</span><span class="k">}</span>
+EY! HELLO
+❯ <span class="nb">echo</span> <span class="k">${</span><span class="nv">REPLY</span><span class="p">##*H</span><span class="k">}</span>
+ELLO</code></pre></figure>
+
+<p>With a pattern removal operation, it would be an easy task to replace an extension of a given filename.</p>
+
+<figure class="highlight"><pre><code class="language-sh" data-lang="sh">❯ <span class="nv">FILENAME</span><span class="o">=</span><span class="s2">"music.avi"</span>
+❯ <span class="nb">echo</span> <span class="k">${</span><span class="nv">FILENAME</span><span class="k">}</span> <span class="k">${</span><span class="nv">FILENAME</span><span class="p">%.*</span><span class="k">}</span>.mp3
+music.avi music.mp3
+❯ mv <span class="k">${</span><span class="nv">FILENAME</span><span class="k">}</span> <span class="k">${</span><span class="nv">FILENAME</span><span class="p">%.*</span><span class="k">}</span>.mp3</code></pre></figure>
+
+<h2 id="pattern-replacement">Pattern Replacement</h2>
+
+<p>If you want to replace a string, you can utilize a pattern replacement operation using <code class="highlighter-rouge">${variable/pattern/string}</code>. If a expanded string of variable contains a matched pattern, a matched part will be replaced with a input string.</p>
+
+<figure class="highlight"><pre><code class="language-sh" data-lang="sh">❯ <span class="nv">FILENAME</span><span class="o">=</span><span class="s2">"music.avi"</span>
+❯ <span class="nb">echo</span> <span class="k">${</span><span class="nv">FILENAME</span><span class="k">}</span> <span class="k">${</span><span class="nv">FILENAME</span><span class="p">/.avi/.mp3</span><span class="k">}</span>
+music.avi music.mp3</code></pre></figure>
+
+<p>By default, only the first match is replaced. To replace every match, the pattern should begin with <code class="highlighter-rouge">/</code>.</p>
+
+<figure class="highlight"><pre><code class="language-sh" data-lang="sh">❯ <span class="nv">REPLY</span><span class="o">=</span><span class="s2">"HEY! HELLO"</span>
+❯ <span class="nb">echo</span> <span class="k">${</span><span class="nv">REPLY</span><span class="p">/HE/__</span><span class="k">}</span>
+__Y! HELLO
+❯ <span class="nb">echo</span> <span class="k">${</span><span class="nv">REPLY</span><span class="p">//HE/__</span><span class="k">}</span>
+__Y! __LLO</code></pre></figure>
+
+<p>If pattern begins with <code class="highlighter-rouge">%</code>, it must match at the end of the expanded string of variable.</p>
+
+<figure class="highlight"><pre><code class="language-sh" data-lang="sh">❯ <span class="nv">REPEAT</span><span class="o">=</span><span class="s2">"HELLO HELLO"</span>
+❯ <span class="nb">echo</span> <span class="k">${</span><span class="nv">REPEAT</span><span class="p">/HELLO/hello</span><span class="k">}</span>
+hello HELLO
+❯ <span class="nb">echo</span> <span class="k">${</span><span class="nv">REPEAT</span><span class="p">/%HELLO/hello</span><span class="k">}</span>
+HELLO hello</code></pre></figure>
+
+<p>If pattern begins with <code class="highlighter-rouge">#</code>, it must match at the beginning of the expanded string of variable. As you know, the original string will be returned if there is no matched pattern. In this example, <code class="highlighter-rouge">REPEAT</code> value doesn’t begin with <code class="highlighter-rouge">HELLO</code> so it returns the original string for the <code class="highlighter-rouge">#HELLO</code> pattern.</p>
+
+<figure class="highlight"><pre><code class="language-sh" data-lang="sh">❯ <span class="nv">REPEAT</span><span class="o">=</span><span class="s2">"HEY! HELLO HELLO"</span>
+❯ <span class="nb">echo</span> <span class="k">${</span><span class="nv">REPEAT</span><span class="p">/HELLO/hello</span><span class="k">}</span>
+HEY! hello HELLO
+❯ <span class="nb">echo</span> <span class="k">${</span><span class="nv">REPEAT</span><span class="p">/#HELLO/hello</span><span class="k">}</span>
+HEY! HELLO HELLO</code></pre></figure>
+
+<blockquote>
+  <p>To get more information, type <code class="highlighter-rouge">man bash</code> and see the ‘Parameter Expansion’ and ‘Pattern Matching’ sections.</p>
+</blockquote>
+
+
+  </div>
+
+</article>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+  <div class="wrapper">
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <img class="avatar" src="https://avatars3.githubusercontent.com/u/4193335?v=3&s=200" alt="Sangsoo Nam">
+      </div>
+
+      <div class="footer-col footer-col-2">
+        <h2 class="footer-heading">Sangsoo Nam</h2>
+        <p>I'm a full-stack developer who likes learning, discussing, and solving interesting problems. These days, I'm focusing on Android development at Spotify
+</p>
+        <p class="footer-host">
+          Hosted in <a target="_blank" href="https://github.com/SangsooNam/sangsoonam.github.io">Github</a>. Served by <a target="_blank" href="https://jekyllrb.com/">Jekyll</a>.
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  </body>
+</html>
