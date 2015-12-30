@@ -182,14 +182,10 @@
 .post-meta {
     font-size: $small-font-size;
     color: $grey-color;
-}
-
-.post-link {
     display: block;
-    font-size: 20px;
+    text-align: center;
+    margin-bottom: 15px;
 }
-
-
 
 /**
  * Posts
@@ -202,6 +198,7 @@
     font-size: 42px;
     letter-spacing: -1px;
     line-height: 1;
+    text-align: center;
 
     @include media-query($on-laptop) {
         font-size: 36px;
