@@ -123,6 +123,3 @@ HEY! HELLO HELLO
 {% endhighlight %}
 
 > To get more information, type `man bash` and see the 'Parameter Expansion' and 'Pattern Matching' sections.
-
-
-
