@@ -5,7 +5,7 @@ title: "Add Task to Wunderlist with Automator Service"
 
 ![](/images/2016/01-01/wunderlist-automator.png)
 
-[Wunderlist](https://www.wunderlist.com/) is a handy task management application which supports a synchronization. These days, I'm using it not only for my tasks but also for memos about ideas and references. I usually add a task inside the application. However, I often just copy a text and add a task by pasting. You might notice that it would be a quite tedious task.
+[Wunderlist](https://www.wunderlist.com/) is a handy task management application which supports a synchronization across all major devices. These days, I'm using it not only for my tasks but also for memos about ideas and references. I usually add a task inside the application. However, I often just copy a text and add a task by pasting. You might notice that it would be a quite tedious task.
 
 Here is how I reduce it.
 
