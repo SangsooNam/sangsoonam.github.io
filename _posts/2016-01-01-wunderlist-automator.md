@@ -43,7 +43,7 @@ I've fixed it with a simple automator service with AppleScript. After following 
 
 1. Launch _'Automator'_
 2. Choose _'Service'_ in the _'Choose a type for your document:'_ popup
-3. Add a item _'Run AppleScript'_ from the library
+3. Add an item _'Run AppleScript'_ from the library
 4. Copy and paste below apple script code
 5. Save as _'Add to Wunderlist 3'_
 
