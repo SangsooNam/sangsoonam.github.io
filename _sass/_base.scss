@@ -143,6 +143,11 @@ pre {
     margin-right: -$spacing-unit;
     overflow-x: auto;
 
+    @include media-query($on-laptop) {
+        margin-right: -$spacing-unit / 2;
+        margin-left: -$spacing-unit / 2;
+    }
+
     > code {
         border: 0;
         padding-right: 0;
