@@ -19,3 +19,6 @@ collections:
   posts_kr:
     output: true
     permalink: /kr/:path:output_ext
+
+gems:
+  - jekyll-gist
