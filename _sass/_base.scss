@@ -138,12 +138,13 @@ code {
 }
 
 pre {
-    padding: 12px 32px;
+    padding: 12px #{$spacing-unit + 2};
     margin-left: -$spacing-unit;
     margin-right: -$spacing-unit;
     overflow-x: auto;
 
     @include media-query($on-laptop) {
+      padding: 12px #{$spacing-unit / 2 + 2};
         margin-right: -$spacing-unit / 2;
         margin-left: -$spacing-unit / 2;
     }
