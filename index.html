@@ -3,13 +3,12 @@ layout: default
 ---
 
 <div class="home">
-  <h1 class="page-heading">Recent Posts</h1>
   <ul class="post-list">
     {% for post in site.posts %}
       <li>
         <a href="{{ post.url | prepend: site.baseurl }}"><h1 class="post-title">{{ post.title }}</h1></a>
         <span class="post-meta">{{ post.date | date: "%B %-d, %Y" }}</span>
-        <p class="post-summary">{{post.content | truncatewords:100 | strip_html }}<p>
+        <p class="post-summary">{{post.content | truncatewords:70 | strip_html }}<p>
       </li>
     {% endfor %}
   </ul>

@@ -175,6 +175,8 @@
     list-style: none;
 
     > li {
+        border-bottom: #CDC 1px solid;
+        padding-bottom: #{$spacing-unit/2};
         margin-bottom: $spacing-unit;
     }
 }
