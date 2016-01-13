@@ -3,7 +3,7 @@ layout: post
 title: "Keep It Simple! Cyclomatic Complexity"
 ---
 
-![Cyclomatic complexity](/images/2016/01-13/cyclomatic-complexity.png)
+![Cyclomatic complexity](/images/2016/01-12/cyclomatic-complexity.png)
 
 Whenever you write code, writing simple code is important. It will improve the maintainability. So, you and other developers can easily test, understand and modify. Here is an important question. How do you know that your code is simple? You may say that it is short so that it is simple. Short code is always good. However, we need a more objective view. For that, Cyclomatic complexity is a good measurement, used to indicate the complexity of code. It is computed using the control flow graph of the code.
 
