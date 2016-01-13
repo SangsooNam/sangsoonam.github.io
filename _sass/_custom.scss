@@ -8,6 +8,13 @@
 	background: $grey-color-dark;
 }
 
+.post-content {
+	img {
+		display:block;
+		margin:auto;
+	}
+}
+
 .gutter {
 	padding-right: 10px;
 }
