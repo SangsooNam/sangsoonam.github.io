@@ -82,7 +82,7 @@ final class AutoValue_Album extends Album {
       throw new NullPointerException("Null artist");
     }
     this.artist = artist;
-    this.description = description;
+    this.description = description; // No null check since nullable
     if (image == null) {
       throw new NullPointerException("Null image");
     }
