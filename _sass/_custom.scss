@@ -15,6 +15,14 @@
 	}
 }
 
+.post-list a:hover {
+	text-decoration: none;
+}
+
+a:hover .post-title {
+	text-decoration: underline;
+}
+
 .gutter {
 	padding-right: 10px;
 }
