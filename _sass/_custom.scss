@@ -18,6 +18,9 @@
 .post-list a:hover {
 	text-decoration: none;
 }
+.post-list a:visited {
+	text-color:$text-color;
+}
 
 a:hover .post-title {
 	text-decoration: underline;
