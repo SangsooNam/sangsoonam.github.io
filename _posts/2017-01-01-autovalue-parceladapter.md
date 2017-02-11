@@ -366,14 +366,9 @@ public abstract class Album implements Parcelable {
 
 
 
-**References**
+## References
 
 * [AutoValue (https://github.com/google/auto/blob/master/value/userguide/index.md)](https://github.com/google/auto/blob/master/value/userguide/index.md)
 * [AutoValue Parcel (https://github.com/rharter/auto-value-parcel)](https://github.com/rharter/auto-value-parcel)
 * [AutoValue ParcelAdapter (https://github.com/rharter/auto-value-parcel#typeadapters)](https://github.com/rharter/auto-value-parcel#typeadapters)
 * [Example Repository (https://github.com/SangsooNam/autovalue-parceladapter)](https://github.com/SangsooNam/autovalue-parceladapter)
-
-
-
-
-

@@ -94,10 +94,6 @@ a {
     color: $brand-color;
     text-decoration: none;
 
-    &:visited {
-        color: darken($brand-color, 10%);
-    }
-
     &:hover {
         text-decoration: underline;
     }
@@ -135,6 +131,7 @@ code {
     font-size: 15px;
     background-color: #272822;
     color: #a9b7c6;
+    letter-spacing: -0.5px;
     font-family: Consolas, "Courier New", monospace;
 }
 

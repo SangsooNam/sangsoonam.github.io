@@ -73,11 +73,8 @@ Whenever you run this script, it will generate files for the static website and 
 
 If you want to use GitBook but are not interested in publishing your github pages, check [GitBook site](https://www.gitbook.com/). You can easily create manuals on the site with nice wysiwyg(what you see is what you get) editor.
 
-**References**
+## References
 
 * [GitBook](https://www.gitbook.com/)
 * [GitBook cli](https://github.com/GitbookIO/gitbook-cli)
 * [Creating project pages](https://help.github.com/articles/creating-project-pages-manually)
-
-
-
