@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Create a Pull Reqeust using Command Line Tool, Hub"
+title: "Create a Pull Request using Command Line Tool, Hub"
 ---
 
 GitHub is a decent version control repository for collaboration. To work together, GitHub suggests a flow, including to make a pull request. Here is the definition of pull request from ["About pull requests"](https://help.github.com/articles/about-pull-requests/) GitHub.
@@ -80,5 +80,3 @@ Of course, `alias` is always our best friends.
 {% highlight sh %}
 alias gpr='git pull-request -m "$(git log -1 --pretty=%B)"'
 {% endhighlight %}
-
-
