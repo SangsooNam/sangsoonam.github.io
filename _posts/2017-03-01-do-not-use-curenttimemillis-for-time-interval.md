@@ -30,10 +30,10 @@ To sum up, use `SystemClock.elapsedRealTime()` to measure the time interval alwa
 
 {% highlight java %}
 // Store the start time
-long startTime = System.elapsedRealTime();
+long startTime = SystemClock.elapsedRealTime();
 ...
 // Calculate the time interval when the task is done
-long timeInterval = System.elapsedRealTime() - startTime;
+long timeInterval = SystemClock.elapsedRealTime() - startTime;
 {% endhighlight %}
 
 ## References
