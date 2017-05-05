@@ -84,7 +84,7 @@ JSON envelope is a wrapper with a named element. The previous style has some lim
     "first": "/tracks?page=1&page_size=20",
     "prev": "/tracks?page=2&page_size=20",
     "next": "/tracks?page=4&page_size=20",
-    "first": "/tracks?page=9&page_size=20"
+    "last": "/tracks?page=9&page_size=20"
   },
   "meta": {
     "total_pages": 9
