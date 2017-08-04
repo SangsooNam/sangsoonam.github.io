@@ -31,7 +31,7 @@ Then, set below to call `jacocoTestport` and `coveralls` tasks in Travis.
 <p class="code-label">.travis.yml</p>
 {% highlight yaml %}
 after_success:
-- ./gradlew jacocoTestReport coveralls
+- ./gradlew test jacocoTestReport coveralls
 {% endhighlight %}
 
 That's it. Once Travis runs, you can see new build request in Coveralls.
