@@ -78,7 +78,7 @@ You can specify a sequence using `-`. You can next a sequence with an empty `-`,
 {% endhighlight %}
 
 #### Mapping
-You can sepcifiy a key-vapue map using `:`. Each member of the map should be on a new line.
+You can specify a key-value map using `:`. Each member of the map should be on a new line.
 
 <p class="code-label">YAML</p>
 {% highlight yaml %}
@@ -135,7 +135,7 @@ capitals: { South Korea: Seoul, Japan: Tokyo }
 }
 {% endhighlight %}
 
-#### Alising and Anchoring
+#### Aliasing and Anchoring
 You can give an alias to a specific item using `&` and name. Then, you can refer/anchor it with `*` and its name.
 
 <p class="code-label">YAML</p>
@@ -154,7 +154,7 @@ nickname: *firstname
 }
 {% endhighlight %}
 
-Aliasing and anchroing is possible not only for a value but also for a whole item.
+Aliasing and anchoring is possible not only for a value but also for a whole item.
 
 <p class="code-label">YAML</p>
 {% highlight yaml %}
@@ -262,7 +262,7 @@ YAML:
 }
 {% endhighlight %}
 
-If you want to keep every line break, you can specify it using `|` with an indendted block. This is treated as a literal block.
+If you want to keep every line break, you can specify it using `|` with an indented block. This is treated as a literal block.
 
 <p class="code-label">YAML</p>
 {% highlight yaml %}
@@ -298,9 +298,9 @@ YAML: |
 {% endhighlight %}
 
 ## Conclusion
-YAML has good extra features such as commenting, aliasing and anchring. It is super human-readable. Compared to YAML, JSON has a bit limited. However, JSON is widely used and supported. One of the main reasons is that it is faster to serialize and deserialize, which is a key factor to communicate between a client and a server. Check [this benchmark](https://gist.github.com/havenwood/4513627). To sum up,
+YAML has good extra features such as commenting, aliasing and anchoring. It is super human-readable. Compared to YAML, JSON is a bit limited. However, JSON is widely used and supported. One of the main reasons is that it is faster to serialize and deserialize, which is a key factor to communicate between a client and a server. Check [this benchmark](https://gist.github.com/havenwood/4513627). To sum up,
 
-* Use JSON for communcation between a client and a server.
+* Use JSON for communication between a client and a server.
 * Use YAML for configuration files since YAML is really human-readable.
 
 > If you want to try/learn YAML, this [YAML to JSON online](https://www.json2yaml.com/convert-yaml-to-json) site is quite handy.
