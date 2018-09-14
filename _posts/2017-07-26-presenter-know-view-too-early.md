@@ -65,7 +65,7 @@ public class SearchActivity extends AppCompatActivity implements Contract.View {
 }
 {% endhighlight %}
 
-> Another approach is to keep the `Contract.View` as a constructor parameter but add `start()` and `stop()` method in `onStart()` and `onStop()`. The reason is that it can avoid the null check. I believe that is worse. `Contract.Presenter` should implicitly consider `start()` and `stop()` to call methods in `Contract.View`. If the `Contract.Presenter` is big, it is easy to make some mistakes. Furthermore, without `Contract.View` constructor parameter is more _Dagger_ friendly. You don't need to provide it :)
+If you are using _Dagger_, you can do like below.
 
 {% highlight java %}
 public class SearchActivity extends AppCompatActivity implements Contract.View {
