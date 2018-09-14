@@ -54,7 +54,7 @@ person:
 Here are basic syntaxes of YAML. I've added an equivalent JSON data so that you can compare between YAML and JSON.
 
 #### Sequence
-You can specify a sequence using `-`. You can next a sequence with an empty `-`, followed by an indented sequence.
+You can specify a sequence using `-`. You can nest a sequence with an empty `-`, followed by an indented sequence.
 
 <p class="code-label">YAML</p>
 {% highlight yaml %}
