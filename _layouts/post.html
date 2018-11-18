@@ -12,6 +12,25 @@ layout: default
     {{ content }}
   </div>
 
+  <nav class="post-navigation">
+    {% if page.previous.url %}
+    <a class="nav-link" href="{{page.previous.url}}">
+      <div>
+        <span class="nav-meta">Previous</span>
+        <span class="nav-title">{{page.previous.title}}</span>
+      </div>
+    </a>
+    {% endif %}
+    {% if page.next.url %}
+    <a class="nav-link" href="{{page.next.url}}">
+      <div>
+        <span class="nav-meta">Next</span>
+        <span class="nav-title">{{page.next.title}}</span>
+      </div>
+    </a>
+    {% endif %}
+  </nav>
+
   <script src="https://utteranc.es/client.js"
           repo="SangsooNam/sangsoonam.github.io"
           issue-term="pathname"
