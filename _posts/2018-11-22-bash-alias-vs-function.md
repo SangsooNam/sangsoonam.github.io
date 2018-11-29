@@ -24,7 +24,7 @@ $ gbr
   origin/release
 {% endhighlight %}
 
-Most aliases contain every information to run the command. Thus, the name would be the only thing you need to type. In some cases, however, you want to run it together with parameters. `gco` is the one example. You want to shorten the typing instead of `git checkout` and you also want to specify the branch when you run it. For that, you just need to type parameters followed by the alias. Commands below works exactly the same.
+Most aliases contain every information to run the command. Thus, the name would be the only thing you need to type. In some cases, however, you want to run it together with parameters. `gco` is the one example. You want to shorten the typing instead of `git checkout` and you also want to specify the branch when you run it. For that, you just need to type parameters after the alias. Commands below works exactly the same.
 
 {% highlight bash %}
 $ gco release
