@@ -11,7 +11,7 @@ Among multiple methods in `TextUtils`, `TextUtils.isEmpty` is a common example. 
 {% highlight java %}
 public static boolean isEmpty(@Nullable CharSequence str) {
     return str == null || str.length() == 0;
-}`
+}
 {% endhighlight %}
 
 Then, what is an issue of `TextUtils`? If you write a production code only, you don't see it at all. However, you will see it when you start to do a unit testing. Let's see it with a code example. In `onEmailTextChanged`, it uses `TextUtils.isEmpty` to determine whether to hide or show the next button. Of course, this code doesn't have any problem to run.
