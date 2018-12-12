@@ -3,6 +3,8 @@ layout: post
 title: "App Crash by `@NonNull` and Android Room"
 ---
 
+## @NonNull
+
 `@NonNull` is a handy annotation to help avoid passing a wrong value in fields and parameters. When Android Studio detects, it highlights those potential problem points.
 
 ![NonNull](/images/2018/12-12/set-item.png)
@@ -18,6 +20,8 @@ public @interface NonNull {
 {% endhighlight %}
 
 If you care about the code quality, I'm sure you would love this annotation and want to apply as many places as possible. It will make your code more solid, especially on `NullPointerException`. This annotation has been working great so far.  **Recently, however, I've found that it can cause a crash when you use Android Room.**
+
+## Android Room
 
 The Android Room is a persistence library that provides an abstraction layer over SQLite. It allows us more robust database access while supporting the full features of SQLite. Entity is one of three major components in Room and it represents a table within the database. This is a entity example.
 
@@ -103,6 +107,8 @@ So, `@NonNull` requires you a migration logic. It seems simple. You just need to
 >
 > *[SQL Features That SQLite Does Not Implement
 ](https://www.sqlite.org/omitted.html)*
+
+## Conclusion
 
 Because of that, I recommend not to use `@NonNull` annotation to fields in `@Entity` class. However, it doesn't mean you cannot use that annotation at all in `@Entity` class. **Except for fields, you can put it to constructor parameters or getters without any side effect.**
 

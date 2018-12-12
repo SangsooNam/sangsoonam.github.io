@@ -60,7 +60,11 @@ java.lang.RuntimeException: Method isEmpty in android.text.TextUtils not mocked.
   at io.github.sangsoonam.textutils.LoginPresenterTest.shouldShowNextButton_whenHaveEmail(LoginPresenterTest.java:22)
 {% endhighlight %}
 
-Why does it happen? The short answer is that JUnit doesn't know Android related code at all. `TextUtils` is in the Android package. Since your application code will run on the Android device, your app will work completely well with `TextUtils`. However, JUnit and `TextUtils` live in a separate world. The key to solve this issue is how to link between them. There are mainly two ways.
+Why does it happen? The short answer is that JUnit doesn't know Android related code at all. `TextUtils` is in the Android package. Since your application code will run on the Android device, your app will work completely well with `TextUtils`. However, JUnit and `TextUtils` live in a separate world. The key to solve this issue is how to link between them.
+
+## Solutions
+
+There are mainly two ways.
 
 1. **Use Java Library**:
 This approach is not to use `TextUtils` at all. You can create a similar utility class or use third-party libraries. JUnit runs together with Java libraries so the problem will be gone.
@@ -77,11 +81,13 @@ How about using Robolectric? You don't need to change the code at all. Unlike JU
 public class LoginPresenterRobolectricTest {
 {% endhighlight %}
 
-This is straightforward. We've solved the issue, right? Well, yes but not optimally. Robolectric is not free. It will take time to set up the Android environment. Maybe you don't consider the unit test running performance. It actually gets important if you work together with other developers. In general setting, your pull request should pass all unit tests. Running unit tests is one of the top time-consuming tasks. I would say that Robolectric could be **10x slower** than normal JUnit.
+This is straightforward. We've solved the issue, right? Well, yes but not optimally. Robolectric is not free. It will take time to set up the Android environment. Maybe you don't consider the unit test running performance. It actually gets important if you work together with other developers. In general setting, your pull request should pass all unit tests. Running unit tests is one of the top time-consuming tasks. I  want to highlight that Robolectric could be **10x slower** than normal JUnit.
 
 ![JUnit](/images/2018/12-02/junit.png)
 
 ![Robolectric](/images/2018/12-02/robolectric.png)
+
+## Better Way
 
 Let's see the example code again. You might notice that this code uses the MVP(Model-View-Presenter) pattern. Moreover, we try to test a presenter part where we don't want to make any dependency on Android. `TextUtils`, which has static methods, is an only one related to Android. Given that this code doesn't have a strong Android dependency, we can actually do some trick to keep the code and to bring the performance back.
 
@@ -99,6 +105,8 @@ public class TextUtils {
 }
 {% endhighlight %}
 
-With this trick, you don't need to change the code and can have a faster unit testing. To sum up, I believe `TextUtils` is not evil. It just needs a little trick for a unit testing. Also, Robolectric is a handy framework to test Android. I really love it when it is needed. We just need to consider more when to use it.
+## Conclusion
+
+With this trick, you don't need to change the code and can have a faster unit testing. To sum up, I believe `TextUtils` is not evil. It just needs a little trick for a unit testing. Also, Robolectric is a great framework to test Android. I really love it when it is needed. We just need to consider more when to use it.
 
 > You can check out [this repository](https://github.com/SangsooNam/textutils) to see the whole code and run it locally.
