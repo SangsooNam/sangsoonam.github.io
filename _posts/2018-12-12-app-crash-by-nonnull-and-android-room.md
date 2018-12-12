@@ -99,7 +99,7 @@ java.lang.IllegalStateException: Room cannot verify the data integrity. Looks li
 
 So, `@NonNull` requires you a migration logic. It seems simple. You just need to change the column attribute along with updating the database version. When you try it, you will realize that it is supposed to be simple but almost impossible. **SQLite is a foundation of Android Room. It doesn't support altering column.**
 
-> Only the RENAME TABLE, ADD COLUMN, and RENAME COLUMN variants of the ALTER TABLE command are supported. Other kinds of ALTER TABLE operations such as DROP COLUMN, ALTER COLUMN, ADD CONSTRAINT, and so forth are omitted.
+> *Only the RENAME TABLE, ADD COLUMN, and RENAME COLUMN variants of the ALTER TABLE command are supported. Other kinds of ALTER TABLE operations such as DROP COLUMN, ALTER COLUMN, ADD CONSTRAINT, and so forth are omitted.*
 >
 > *[SQL Features That SQLite Does Not Implement
 ](https://www.sqlite.org/omitted.html)*
