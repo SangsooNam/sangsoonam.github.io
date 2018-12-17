@@ -11,6 +11,7 @@ description: >
   I'm a full-stack developer who likes learning, discussing, and solving interesting problems.
   These days, I'm focusing on Android development at Spotify
 baseurl: "" # the subpath of your site, e.g. /blog
+future: false
 
 # Build settings
 markdown: kramdown
@@ -20,5 +21,5 @@ collections:
     output: true
     permalink: /kr/:path:output_ext
 
-gems:
+plugins:
   - jekyll-gist
