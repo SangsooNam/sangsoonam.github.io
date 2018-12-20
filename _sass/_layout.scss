@@ -157,6 +157,21 @@
     }
 }
 
+/**
+ * Pagination
+ */
+.pagination {
+  text-align: center;
+
+  .page-link {
+    font-weight: bold;
+    padding: 15px 10px 15px 10px;
+  }
+  span.page-link {
+    color: #CCC;
+  }
+}
+
 
 /**
  * Post Navigation
