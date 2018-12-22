@@ -12,6 +12,8 @@
 
   {% if jekyll.environment == 'production' %}
     {% include google-analytics.html %}
-    {% include google-adsense.html %}
+    {% if page.layout == 'post' %}
+     {% include google-adsense.html %}
+    {% endif %]}
   {% endif %}
 </head>
