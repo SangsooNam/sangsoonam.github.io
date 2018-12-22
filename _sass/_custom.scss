@@ -70,6 +70,13 @@ a.symbol:hover {
 	text-decoration: none;
 }
 
+.share-bar {
+	text-align: center;
+	padding-bottom: 10px;
+	a {
+		color: $grey-color-dark;
+	}
+}
 .code-label {
 	background: #424242;
 	display: inline-block;
