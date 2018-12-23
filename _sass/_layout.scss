@@ -195,8 +195,38 @@
     .nav-meta {
         font-size: 0.8em;
         color: #828282;
-        display: block;
         text-transform: uppercase;
+    }
+    .post-related {
+      a:hover .post-related-title {
+        text-decoration: underline;
+      }
+      a {
+        width: 23.73%;
+        margin-left: 1.69%;
+        float: left;
+        height: 200px;
+        overflow: hidden;
+
+        &:first-of-type {
+          margin-left: 0;
+        }
+        &:hover {
+          text-decoration: none;
+        }
+      }
+      &:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+      .post-related-title {
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .post-summary {
+        font-weight: normal;
+      }
     }
 }
 
@@ -204,6 +234,24 @@
 	.post-navigation {
 		margin-left: -15px;
     margin-right: -15px;
+    .post-related {
+      a:hover .post-related-title {
+        text-decoration: underline;
+      }
+      a {
+        width: 49%;
+        margin-left: 2%;
+        height: 150px;
+
+        &:nth-of-type(3) {
+          margin-top: 13px;
+          margin-left: 0;
+        }
+        &:nth-of-type(4) {
+          margin-top: 13px;
+        }
+      }
+    }
 	}
 }
 

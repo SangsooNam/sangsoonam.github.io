@@ -34,7 +34,7 @@ layout: default
     {% if page.next.url %}
     <a class="nav-link" href="{{page.next.url}}">
       <div>
-        <span class="nav-meta">Previous</span>
+        <div class="nav-meta">Previous</div>
         <span class="nav-title">{{page.next.title}}</span>
       </div>
     </a>
@@ -42,11 +42,25 @@ layout: default
     {% if page.previous.url %}
     <a class="nav-link" href="{{page.previous.url}}">
       <div>
-        <span class="nav-meta">Next</span>
+        <div class="nav-meta">Next</div>
         <span class="nav-title">{{page.previous.title}}</span>
       </div>
     </a>
     {% endif %}
+    <div class="nav-link post-related">
+      <div class="nav-meta">You might also like</div>
+      {% assign posts = site[page.collection] | sample:5 %}
+      {% assign relatedCount = 0 %}
+      {% for post in posts %}
+        {% if post.url != page.url %}
+          {% include post-related.html %}
+          {% assign relatedCount = relatedCount | plus: 1 %}
+          {% if relatedCount >= 4 %}
+            {% break %}
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+    </div>
   </nav>
 
   <script src="https://utteranc.es/client.js"
