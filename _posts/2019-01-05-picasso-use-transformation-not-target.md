@@ -85,6 +85,8 @@ public class BlurTransformation implements Transformation {
 }
 {% endhighlight %}
 
+> Check the full [BlurTransformation.java](https://gist.github.com/SangsooNam/6c01f2932daf98df30f796d0de141444).
+
 ## Conclusion
 
 You should utilize `transform()` when you want to transform an image rather than `Target`. With that, you don't need to worry about many things such as threading, caching and memory releasing. It is also possible to set multiple transformations.
