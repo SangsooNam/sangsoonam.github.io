@@ -20,7 +20,7 @@ When you inject, it is vital to call `AndroidInjection.inject()` before `super.o
 {% highlight java %}
 @Override
 protected void onCreate(Bundle savedInstanceState) {
-  // Note: Shold call before `super.onCreate`
+  // Note: Should call before `super.onCreate`
   AndroidInjection.inject(this);
   super.onCreate(savedInstanceState);
 }
