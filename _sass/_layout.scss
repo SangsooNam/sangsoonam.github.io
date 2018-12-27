@@ -202,6 +202,17 @@
         list-style: none;
         margin-left: 0;
 
+        &:after {
+          content: "";
+          display: table;
+          clear: both;
+        }
+        a:hover .post-related-title {
+          text-decoration: underline;
+        }
+        a:hover {
+          text-decoration: none;
+        }
         li {
           width: 49%;
           height: 120px;
@@ -215,17 +226,6 @@
             padding-top: 15px;
           }
         }
-        &:after {
-          content: "";
-          display: table;
-          clear: both;
-        }
-        a:hover .post-related-title {
-          text-decoration: underline;
-        }
-        a:hover {
-          text-decoration: none;
-        }
       }
 
       .post-related-title {
@@ -236,6 +236,7 @@
         padding-left: 10px;
         font-size: 14.5px;
         font-weight: normal;
+        @include text-clamp(4);
       }
     }
 }
@@ -252,6 +253,9 @@
           height: auto;
           margin-left: 0 !important;
           padding-top: 0 !important;
+        }
+        .post-summary {
+          @include text-clamp(3);
         }
       }
     }
