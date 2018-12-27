@@ -22,6 +22,10 @@
     &:visited {
         color: $grey-color-dark;
     }
+
+    @include media-query($on-small-palm) {
+      font-size: 20px;
+    }
 }
 
 .site-nav {
