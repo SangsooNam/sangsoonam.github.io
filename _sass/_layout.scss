@@ -239,30 +239,25 @@
         @include text-clamp(4);
       }
     }
-}
-
-@media screen and (max-width: 800px) {
-	.post-navigation {
-		margin-left: -15px;
-    margin-right: -15px;
-    .post-related {
-      ul {
-        li {
-          float: inherit;;
-          width: 100%;
-          height: auto;
-          margin-left: 0 !important;
-          padding-top: 0 !important;
-        }
-        .post-summary {
-          @include text-clamp(3);
+    @include media-query($on-palm) {
+      margin-left: -15px;
+      margin-right: -15px;
+      .post-related {
+        ul {
+          li {
+            float: inherit;;
+            width: 100%;
+            height: auto;
+            margin-left: 0 !important;
+            padding-top: 0 !important;
+          }
+          .post-summary {
+            @include text-clamp(3);
+          }
         }
       }
     }
-	}
 }
-
-
 
 /**
  * Page content
