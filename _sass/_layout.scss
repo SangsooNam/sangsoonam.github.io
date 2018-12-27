@@ -301,6 +301,7 @@
     letter-spacing: -1px;
     line-height: 1.2;
     text-align: center;
+    overflow-wrap: break-word;
 
     @include media-query($on-laptop) {
         font-size: 30px;
