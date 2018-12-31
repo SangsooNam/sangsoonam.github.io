@@ -283,6 +283,11 @@
         padding-bottom: #{$spacing-unit/2};
         margin-bottom: $spacing-unit;
     }
+    .post-summary {
+        @include media-query($on-palm) {
+            @include text-clamp(4);
+        }
+    }
 }
 
 .post-meta {
