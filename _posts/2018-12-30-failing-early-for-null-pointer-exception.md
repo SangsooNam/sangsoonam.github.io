@@ -29,8 +29,8 @@ To make sure you have a not null object while running the app, you need to verif
 {% highlight java %}
 public class User {
 
-    private String email;
-    private String name;
+    @NonNull private String email;
+    @NonNull private String name;
 
     public User(@NonNull String email, @NonNull String name) {
         assert email != null;
@@ -51,8 +51,8 @@ import static com.google.common.base.Preconditions.checkNotNull;
 
 public class User {
 
-    private String email;
-    private String name;
+    @NonNull private String email;
+    @NonNull private String name;
 
     public User(@NonNull String email, @NonNull String name) {
         this.email = checkNotNull(email);
