@@ -118,3 +118,5 @@ public class ExampleUnitTest {
 ## Conclusion
 
 Consistency is an important factor to make a solid code. Checkstyle is a handy checker in terms of styling during collaboration. After discussion, you can add a custom rule, such as static import, to keep the consistency now and future.
+
+> If you want to try, you can clone [this repository](https://github.com/SangsooNam/static-import-checker) and run the task.
