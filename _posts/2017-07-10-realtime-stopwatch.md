@@ -49,6 +49,8 @@ protected void onCreate(Bundle savedInstanceState) {
 }
 {% endhighlight %}
 
+{% include google-adsense-in-article.html %}
+
 This works well although it seems to call `post` too many. There is no delay. We all know human can see more or less 60 frames per second. Given that fact, how about adding a delay (1000 / 60 = 16.6 millis)?
 
 {% highlight java %}
@@ -121,6 +123,3 @@ To be sum up, you can use the `View#post` without any delay if you want to updat
 
 > Check this repository and run it if you want to check by yourself.
 > [https://github.com/SangsooNam/realtime-stopwatch](https://github.com/SangsooNam/realtime-stopwatch)
-
-
-

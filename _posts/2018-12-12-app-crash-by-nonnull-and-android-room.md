@@ -21,6 +21,8 @@ public @interface NonNull {
 
 If you care about the code quality, I'm sure you would love this annotation and want to apply as many places as possible. It will make your code more solid, especially on `NullPointerException`. This annotation has been working great so far.  **Recently, however, I've found that it can cause a crash when you use Android Room.**
 
+{% include google-adsense-in-article.html %}
+
 ## Android Room
 
 The Android Room is a persistence library that provides an abstraction layer over SQLite. It allows us more robust database access while supporting the full features of SQLite. Entity is one of three major components in Room and it represents a table within the database. This is a entity example.

@@ -69,6 +69,8 @@ public class User {
 }
 {% endhighlight %}
 
+{% include google-adsense-in-article.html %}
+
 ## UnrecognizedPropertyException
 
 The crash happens because of `UnrecognizedPropertyException`. By default, Jackson generates this exception if there is unknown property. When the v1.0 was released, there was no exception. The issue started when the backend returned more data for v1.1. v1.1 doesn't have a problem because all properties from the backend JSON data are consumed. However, v1.0 doesn't know how to handle unrecognized property, `gender`. In short, only v1.0 has a crash issue. **It is vital to mention that not all users update their app up to date.**

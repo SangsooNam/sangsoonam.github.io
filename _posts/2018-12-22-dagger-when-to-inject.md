@@ -36,6 +36,8 @@ There is `onCreate` method in `Fragment` like `Activity`. You might think that i
  }
  {% endhighlight %}
 
+{% include google-adsense-in-article.html %}
+
 ## Conclusion
 
 Dependencies should be injected as soon as possible. It is `onCreate` for `Activity` and `onAttach` for `Fragment`. When you call `AndroidInjection.inject()`, make sure to call it before its super method to avoid a wrong situation. If your class can extend `DaggerActivity` and `DaggerFragment`, consider to extend it because it already implemented this.

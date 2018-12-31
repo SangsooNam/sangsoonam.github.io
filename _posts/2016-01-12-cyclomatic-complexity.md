@@ -43,6 +43,8 @@ M = B + 1
 
 In this example, there are 2 branch points: `if(line 1)`, `if(line 2)`. Thus, the complexity is 3 (2 + 1), which is the same value.
 
+{% include google-adsense-in-article.html %}
+
 ## Example 2
 {% highlight javascript linenos %}
 for (var i = 0; i < 10; i++) {

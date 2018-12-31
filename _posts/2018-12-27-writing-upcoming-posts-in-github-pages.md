@@ -31,6 +31,8 @@ You can change the `_config.yml` to show unpublished posts without `--unpublishe
 unpublished: true
 {% endhighlight %}
 
+{% include google-adsense-in-article.html %}
+
 ## Future
 
 In Jekyll, a post date is defined by a filename, e.g. `_posts/2018-08-21-apples.md`. If you use the future date on your post, it would be published on that date. To see future dated posts locally, you need to use `--future` option.

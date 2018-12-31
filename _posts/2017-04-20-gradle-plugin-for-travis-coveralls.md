@@ -11,6 +11,8 @@ The way to integrate both depends on your project tools. I'm using [Gradle](http
 
 With this plugin, it is quite easy to integrate. You need add that plugin and set `xml.enabled` as `true` which is needed for Coveralls.
 
+{% include google-adsense-in-article.html %}
+
 <p class="code-label">build.gradle</p>
 {% highlight groovy %}
 plugins {

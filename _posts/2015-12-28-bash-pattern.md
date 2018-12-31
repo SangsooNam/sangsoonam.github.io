@@ -29,6 +29,7 @@ A B C
 {% endhighlight %}
 
 
+{% include google-adsense-in-article.html %}
 
 ## Pattern Removal
 

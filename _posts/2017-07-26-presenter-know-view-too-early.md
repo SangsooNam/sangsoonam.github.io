@@ -28,6 +28,8 @@ public class SearchActivity extends AppCompatActivity implements Contract.View {
 
 You can consider this code doesn't have any problem. However, it depends. According to the Android life cycle, Android `View` is not created yet. After `onViewCreated()` is called, we can sure it is created. If `Contract.Presenter` calls `showLoading()` before `onViewCreated()`, it could make a crash. So, I would recommend avoiding passing the `Contract.View` as a constructor parameter of `Contract.Presenter`.
 
+{% include google-adsense-in-article.html %}
+
 Then, how can we set a `Contract.View` for `Contract.Presenter`? In the lifecycle, `View` is alive between `onStart()` and `onStop()`. By setting and unsetting the `Contract.View` at that time, we can avoid accessing `View` before created and after destroyed.
 
 {% highlight java %}

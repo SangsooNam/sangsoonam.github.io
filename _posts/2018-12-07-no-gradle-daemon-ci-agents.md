@@ -13,6 +13,8 @@ Caused by: org.gradle.cache.LockTimeoutException:
   It is currently in use by another Gradle instance.
 {% endhighlight %}
 
+{% include google-adsense-in-article.html %}
+
 To resolve this issue, you shouldn't use Gradle Daemon. There are two ways to set not to use it. One is to set it in `gradle.properties`. If you don't have `org.gradle.daemon` key, it equals to `false`. The other way is to add `--no-daemon` when you run `./gradlew`. Your tasks will be executed without Gradle Daemon regardless of the value in the `gradle.properties`.
 
 <p class="code-label">gradle.properties</p>

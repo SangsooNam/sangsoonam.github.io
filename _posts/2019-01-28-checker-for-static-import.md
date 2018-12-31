@@ -29,6 +29,8 @@ public void test() {
 }
 {% endhighlight %}
 
+{% include google-adsense-in-article.html %}
+
 [Checkstyle](http://checkstyle.sourceforge.net/) is a tool to check those style matters. There are lots of useful style rules but no rule for static import. Static import is highly related on the classes in your code or third-party libraries. So, you need to define a custom rule. First of all, you can set up the Checkstyle for Android project:
 
 <p class="code-label">build.gradle</p>

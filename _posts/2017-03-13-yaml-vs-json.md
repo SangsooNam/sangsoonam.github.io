@@ -32,6 +32,8 @@ JSON(JavaScript Object Notation) is wildly used for a client and a server commun
 </person>
 {% endhighlight %}
 
+{% include google-adsense-in-article.html %}
+
 ## YAML
 YAML(YAML Ain't Markup Language) gives a even simpler way than JSON to represent the data. It removes curly brackets(`{}`) and squard brackets(`[]`) except for inline collections. In addition, vertical alignment is used to show the structure. Technically, YAML is a superset of JSON. In most cases, it is possible to convert YAML to JSON and JSON to YAML. YAML also has extra features, which are not in JSON.
 

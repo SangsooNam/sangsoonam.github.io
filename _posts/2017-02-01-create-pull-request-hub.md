@@ -22,6 +22,8 @@ This is not a complicate. However, you need to open the web browser to do it. Fo
 ❯ alias git=hub
 {% endhighlight %}
 
+{% include google-adsense-in-article.html %}
+
 After this, you can run GitHub commands in addition to normal `git` commands.
 
 {% highlight sh %}

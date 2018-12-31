@@ -19,6 +19,8 @@ I highly recommend placing `@NonNull` and `@Nullable` as many places as you can.
 
 Moreover, this check doesn't work on the runtime environment. Suppose the backend returns a `null` value after some changes. Your app could crash with NPE although a parameter has `@NonNull` annotation.
 
+{% include google-adsense-in-article.html %}
+
 ## checkNotNull
 
 To make sure you have a not null object while running the app, you need to verify objects, mostly at constructors and setters. Java supports assertions. You can verify a value or state by using `assert` keyword. Although it is supported by Java, I don't recommend it for Android development.

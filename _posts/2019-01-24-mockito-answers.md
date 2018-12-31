@@ -33,6 +33,8 @@ when(connetionInfo.isConnected()).thenReturn(true);
 
 For those cases, Mockito supports a way to set logic for specifying what to return instead of an empty value. You can do it by implementing  `Answer` interface and passing it when you mock an object. There are predefined `Answer`s for common cases in Mockito. You could utilize this rather than implementing a custom `Answer`. Here are some useful Mockito `Answer`s.
 
+{% include google-adsense-in-article.html %}
+
 ## RETURNS_MOCKS
 
 If a method return type is a custom class, a mock returns `null` because there is no empty value for a custom class. `RETURN_MOCKS` will try to return mocks if possible instead of `null`. Since `final` class cannot be mocked, `null` is still returned in that case.

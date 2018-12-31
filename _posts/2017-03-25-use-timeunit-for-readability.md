@@ -28,6 +28,8 @@ System.out.println(TimeUnit.HOURS.toMillis(24)); // Result: 86400000
 System.out.println(TimeUnit.MILLISECONDS.toDays(86400000)); // Result: 1
 {% endhighlight %}
 
+{% include google-adsense-in-article.html %}
+
 In addition, `TimeUnit` supports a `sleep` method. You probably have seen this code snippet.
 
 {% highlight java %}

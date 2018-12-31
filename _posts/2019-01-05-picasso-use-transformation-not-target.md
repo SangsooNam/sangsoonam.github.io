@@ -46,6 +46,8 @@ Although this works, I urge you not to use `Target` if your purpose is to transf
 
 4. **Debug Indicators**: Picasso uses `PicassoDrawable` internally. It contains a logic to show debug indicators when you enable it. This is no real user impact but you will lose it when you handle `Target` directly.
 
+{% include google-adsense-in-article.html %}
+
 ## Transformation
 
 For transformations, Picasso supports a method, `transform(Transformation)` in the request chain. So, you need to create a class implementing `Transformation`. The result looks like this:

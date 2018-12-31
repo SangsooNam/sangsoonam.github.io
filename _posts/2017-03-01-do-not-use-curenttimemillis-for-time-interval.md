@@ -22,6 +22,8 @@ When you test this code, you can see that it works well. Then, why we need to av
 
 ![TimeZone](/images/2017/03-01/timezone.png)
 
+{% include google-adsense-in-article.html %}
+
 To avoid those cases, we need to use another method. Android has a good utility class, `SystemClock`.  `SystemClock.elapsedRealTime()` is the method what we want. This returns elapsed time in milliseconds since the system was booted. This includes time spend in sleep such as CPU off, display dark, and etc.
 
 > `SystemClock.uptimeMillis()` is counted in milliseconds since the system was booted. This looks quite similar with `SystemClock.elapsedRealTime()` but this clock stops when the system enters deep sleep.

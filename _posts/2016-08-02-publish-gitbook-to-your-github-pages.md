@@ -56,6 +56,8 @@ Serving book on http://localhost:4000
 {% endhighlight %}
 > If you just want to build a static site only, run `gitbook buid` instead of `gitbook serve`.
 
+{% include google-adsense-in-article.html %}
+
 When you open the site (either open the `index.html` or `http://localhost:4000`), you will see a similar page like this.
 ![](/images/2016/08-02/gitbook.png)
 

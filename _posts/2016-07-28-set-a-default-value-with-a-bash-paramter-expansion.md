@@ -24,6 +24,8 @@ Then, you just need to type the bash script name to execute it.
 
 It seems just a bit shorter, but you don't need worry about any typo. It would become much more powerful when you typed a long command previously.
 
+{% include google-adsense-in-article.html %}
+
 The backup file is generated in the current folder. If you want to change it dynamically, how can you do it? The easiest way to do it is using argument variables. Those are set when you execute the script. Here you can see one argument variable, `/my-backup/`.
 
 {% highlight sh %}
@@ -51,7 +53,3 @@ If the parameter has a value, it will be used. Otherwise, the default value will
 #!/bin/bash
 tar -cf ${1:-/backup/}backup.tar /data/logs
 {% endhighlight %}
-
-
-
-

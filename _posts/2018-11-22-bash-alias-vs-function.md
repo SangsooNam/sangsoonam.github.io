@@ -33,6 +33,8 @@ $ git checkout release
 
 Alias acts as replacing a name to a defined value. Although it is quite handy for most cases, you might want to do something more advanced where alias doesn't fit well.
 
+{% include google-adsense-in-article.html %}
+
 First, you cannot specify the parameter position with alias. Alias always put parameters at the end of the defined command. Below commands has the same command and option except for `MainActivityTest` and `PlayerActivityTest`. If you want to replace that part, alias doesn't support it
 
 {% highlight bash %}

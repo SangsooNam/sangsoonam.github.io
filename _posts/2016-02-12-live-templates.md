@@ -24,6 +24,8 @@ public Image(@NonNull String url, @NonNull String title) {
 }
 {% endhighlight %}
 
+{% include google-adsense-in-article.html %}
+
 There are really good annotations. However, I've noticed that two things.
 
 1. Typing `@NonNull` and `@Nullable` is not that short.

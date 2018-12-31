@@ -53,6 +53,8 @@ print_hi('Tom')
 #=> prints 'Hi, Tom' to STDOUT.
 {% endhighlight %}
 
+{% include google-adsense-in-article.html %}
+
 ## fenced_code_blocks for Markdown
 
 You typically write posts in Markdown, supported by Jekyll. In Markdown, syntax highlighting is enabled with three backticks(<code class="highlighter-rouge">&#96;&#96;&#96;</code>). It is natural that you want to do it instead of `{% raw %}{% highlight <lang> [linenos]%}{% endraw %}`. This is called `fenced_code_blocks` and Jekyll set it to `true` by default. So, you can do like below:

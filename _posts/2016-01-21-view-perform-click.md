@@ -34,6 +34,8 @@ searchText.setOnKeyListener(new OnKeyListener() {
 });
 {% endhighlight %}
 
+{% include google-adsense-in-article.html %}
+
 If you use this method, it works mostly well like you expected. However, I've noticed that some people often have a problem because they forgot its definition. What do you expect about this example?
 
 {% highlight java %}

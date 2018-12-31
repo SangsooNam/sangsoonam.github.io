@@ -27,6 +27,8 @@ public final Disposable subscribe(Consumer<? super T> onNext) {
 ...
 {% endhighlight %}
 
+{% include google-adsense-in-article.html %}
+
 For errors, `OnErrorMissingConsumer` makes a `OnErrorNotImplementedException`. This is `RuntimeException` and the app would crash unless you handled it. If you get the event or data from the network or database, there is a chance that you will get errors. It could be an internet connectivity problem or database locking. Although this makes the app crash, it could be hard to know this while developing. We usually don't test those error scenarios.
 
 {% highlight java %}

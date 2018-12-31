@@ -154,6 +154,8 @@ final class AutoValue_Album extends Album {
 }
 {% endhighlight %}
 
+{% include google-adsense-in-article.html %}
+
 ## Parcelable
 
 `Parcelable` was introduced in Android to store values mush fast than `Serializable`. It is important to make it parcelable as mush as possible because mobile devices can gain performance improvement a lot from that. To make value classes as parcelable, there are some requirements.

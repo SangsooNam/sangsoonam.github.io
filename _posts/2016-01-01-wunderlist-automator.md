@@ -19,6 +19,7 @@ By registering a keyboard shortcut, it is much simpler.
 
 ![Wunderlist Keyboard Shortcut](/images/2016/01-01/wunderlist-service-keyboard.png)
 
+{% include google-adsense-in-article.html %}
 
 ## Automator Service
 

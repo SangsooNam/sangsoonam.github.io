@@ -17,6 +17,8 @@ Many teams develop their integration policy differently  based on their needs. F
 * Integration test
 * Acceptance test
 
+{% include google-adsense-in-article.html %}
+
 ## Continuous Delivery
 This is closely related to the Continuous Integration and refers readiness of software release to production. The readiness requires to pass every test, including acceptance test. Those tests are automated and mostly done in Continuous Integration. Then, you should be able to click one button, called "Release", to release readied software.
 

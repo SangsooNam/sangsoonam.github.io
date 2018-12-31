@@ -22,6 +22,8 @@ From github.com
 $ git checkout pr/2637
 {% endhighlight %}
 
+{% include google-adsense-in-article.html %}
+
 If you do this frequently, you probably will consider git aliases. Someone([https://gist.github.com/gnarf/5406589](https://gist.github.com/gnarf/5406589){:target="_blank"}) already made those aliases, and you can just use it.
 
 

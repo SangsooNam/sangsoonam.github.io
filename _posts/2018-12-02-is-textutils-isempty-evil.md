@@ -62,6 +62,8 @@ java.lang.RuntimeException: Method isEmpty in android.text.TextUtils not mocked.
 
 Why does it happen? The short answer is that JUnit doesn't know Android related code at all. `TextUtils` is in the Android package. Since your application code will run on the Android device, your app will work completely well with `TextUtils`. However, JUnit and `TextUtils` live in a separate world. The key to solve this issue is how to link between them.
 
+{% include google-adsense-in-article.html %}
+
 ## Solutions
 
 There are mainly two ways.

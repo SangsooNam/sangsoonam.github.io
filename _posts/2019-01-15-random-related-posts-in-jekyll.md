@@ -26,6 +26,8 @@ This is because of the default Jekyll configuration. Here is a description from 
 > _[Jekyll site variables](https://jekyllrb.com/docs/variables/#site-variables)_
 
 
+{% include google-adsense-in-article.html %}
+
 ## Related Posts with Latent Semantic Indexing
 
 Latent semantic indexing is one of the most popular algorithms to calculate a similarity between documents. By enabling it, we can get the correct related posts. In Jekyll, you run with the `--lsi` or enable it in the `_config.xml`. When it is enabled, it shows `Populating LSI...`.

@@ -46,6 +46,8 @@ In this style, JSON object and JSON array are utilized directly.
 
 One main advantage of this style is to use a small amount of data to transmit. However, this doesn't consider metadata including pagination for collection resources. The backend should return whole resources. You can easily imagine that it could be impossible once the number of resources is too many.
 
+{% include google-adsense-in-article.html %}
+
 ## Envelope Style
 JSON envelope is a wrapper with a named element. The previous style has some limitation for collection resources. To solve those, JSON envelope is used to wrap the data.
 
