@@ -59,18 +59,18 @@ Rebuilding index...
  Auto-regeneration: disabled. Use --watch to enable.
 {% endhighlight %}
 
-Now, you can see the correct related posts. Although this brings a better result, this is quite slow. **In my case, it takes 36 times slower than normal build.** Moreover, this has a bigger problem if you host your blog on Github Pages.
+Now, you can see the correct related posts. Although this brings a better result, this is quite slow. **In my case, it takes 36 times slower than normal build.** Moreover, this has a bigger problem if you host your blog on GitHub Pages.
 
-## Problem on Github Pages
+## Problem on GitHub Pages
 
-**Simply, GitHub Pages does not support the `lsi` option when generating sites.** There is no clear reason but I guess the performance is one of them. As you saw, it is much slower than normal build. Github Pages is currently free and LSI uses resource a lot.
+**Simply, GitHub Pages does not support the `lsi` option when generating sites.** There is no clear reason but I guess the performance is one of them. As you saw, it is much slower than normal build. GitHub Pages is currently free and LSI uses resource a lot.
 
-Github Pages acts differently depending on source types: Jekyll and HTML. For Jekyll, it will generate a site and deploy it. For HTML, however, the source will be just deployed without a generation stage. Generally, `gh-pages` branch is used for the HTML source. It means that you can use the LSI if you push a locally generated site and change the source type. However, you need to push a generated site every time by yourself.
+GitHub Pages acts differently depending on source types: Jekyll and HTML. For Jekyll, it will generate a site and deploy it. For HTML, however, the source will be just deployed without a generation stage. Generally, `gh-pages` branch is used for the HTML source. It means that you can use the LSI if you push a locally generated site and change the source type. However, you need to push a generated site every time by yourself.
 
 
 ## Random Related Posts
 
-There are some techniques to solve this Github Pages limitation by utilizing Jekyll tags or categories. [One](https://alligator.io/jekyll/related-posts-in-jekyll/) shows recent posts in the same category. [Another](https://blog.webjeda.com/jekyll-related-posts/) calculates the number of matched tags. Those are doable but I'm looking for more a content-based suggestion like LSI without manually generating a site. Until that, I think random posts could be okay in terms of exploring posts. Some might be actually relevant for readers.
+There are some techniques to solve this GitHub Pages limitation by utilizing Jekyll tags or categories. [One](https://alligator.io/jekyll/related-posts-in-jekyll/) shows recent posts in the same category. [Another](https://blog.webjeda.com/jekyll-related-posts/) calculates the number of matched tags. Those are doable but I'm looking for more a content-based suggestion like LSI without manually generating a site. Until that, I think random posts could be okay in terms of exploring posts. Some might be actually relevant for readers.
 
 {% highlight java %}
 {% raw %}
