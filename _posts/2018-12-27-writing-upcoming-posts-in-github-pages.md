@@ -48,6 +48,13 @@ You also can change the config file to show future posts always. I don't think y
 future: false
 {% endhighlight %}
 
+> GitHub Pages doesn't update the content automatically. The content is updated only when there is a new commit. If you committed a post with a future date, it won't be shown on that date. You can trigger the update by pushing a new commit. If you don't have any new commit, you can amend the last commit and then push it for triggering.
+
+{% highlight bash %}
+$ git commit --amend --no-edit
+$ git push --force
+{% endhighlight %}
+
 ## Draft
 
 If you put your post in `_drafts`, you are able to push it to GitHub along with hiding to others. When you move it into `_posts`, that will be shown. To see it locally, use `--drafts` option.
