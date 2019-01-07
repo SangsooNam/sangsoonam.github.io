@@ -101,4 +101,4 @@ Picasso.get()
        .into(imageView);
 {% endhighlight %}
 
-> If you are looking for different transformations, [Picasso Transformations](https://github.com/wasabeef/picasso-transformations) library provides a variety of image transformations for Picasso.
+> If you are looking for different transformations, [Picasso Transformations](https://github.com/wasabeef/picasso-transformations) library provides a variety of image transformations for Picasso such as blur, crop, and color.
