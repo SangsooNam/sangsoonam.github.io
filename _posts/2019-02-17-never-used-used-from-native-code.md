@@ -94,6 +94,8 @@ public class NativeCallback {
 }
 {% endhighlight %}
 
+![ProGuard](/images/2019/02-17/proguard.png)
+
 ## Conclusion
 
 Native code and Java code use different languages. Android Studio doesn't detect well whether a Java method is used in native code. A custom annotation can help this issue. With `@UsedFromNativeCode`, you can clarify where the method is used and can suppress unused warnings effectively. Moreover, it makes ProGuard configuration short and easy.
