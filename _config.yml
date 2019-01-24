@@ -25,3 +25,6 @@ paginate: 6
 plugins:
   - jekyll-gist
   - jekyll-paginate
+
+sass:
+    style: compressed
