@@ -47,9 +47,11 @@ This entity has three fields. Unless you set to ignore, each field will represen
 {% highlight groovy %}
 android {
   ...
-  javaCompileOptions {
-    annotationProcessorOptions {
-      arguments = ["room.schemaLocation": "$projectDir/schemas".toString()]
+  defaultConfig {
+    javaCompileOptions {
+      annotationProcessorOptions {
+        arguments = ["room.schemaLocation": "$projectDir/schemas".toString()]
+      }
     }
   }
 }
