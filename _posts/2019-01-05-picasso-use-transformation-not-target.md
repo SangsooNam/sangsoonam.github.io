@@ -36,7 +36,7 @@ Picasso.get()
       });
 {% endhighlight %}
 
-Although this works, I urge you not to use `Target` if your purpose is to transform an image before showing. Here are four reasons:
+1. Although this works, I recommend not to use `Target` if your purpose is to transform an image before showing. Here are four reasons:
 
 1. **Main thread**: `onBitmapLoaded` is called on the main thread. If your task is long or frequently called, your app would be slow or have a UI hang issue.
 

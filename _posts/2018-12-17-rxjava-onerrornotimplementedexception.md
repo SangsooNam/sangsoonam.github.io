@@ -44,7 +44,7 @@ io.reactivex.exceptions.OnErrorNotImplementedException: Error
 	at io.reactivex.internal.operators.flowable.FlowableError.subscribeActual(FlowableError.java:39)
 {% endhighlight %}
 
-This issue can be easily gone by specifying an error consumer. **Thus, I urge you to set the error consumer always to avoid the app crash. With the error consumer, you can guide users some actions or show proper messages.**
+This issue can be easily gone by specifying an error consumer. **Thus, I suggest you to set the error consumer to avoid the app crash. With the error consumer, you can guide users some actions or show proper messages.**
 
 {% highlight java %}
 getUser() // Publisher. Events could be from the network or database.
