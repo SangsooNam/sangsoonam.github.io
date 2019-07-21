@@ -29,6 +29,14 @@ This command saves a screenshot to `screenshot.png`. As you notice, this will ov
 $ adb exec-out screencap -p > `date +Screenshot_%s.png`
 {% endhighlight %}
 
+> If you run this frequently, you can set an alias for that.
+
+<p class="code-label">.zshrc</p>
+{% highlight shell%}
+alias asc="adb exec-out screencap -p > `date +Screenshot_%s.png`"
+{% endhighlight %}
+
+
 This command is enough for most cases. However, there is still some chance to overwrite because `unix_timestamp` uses seconds. If you concern that, you can add a millisecond additionally. `%N` returns nanoseconds and `%3N` returns milliseconds by cutting the first 3 digits.
 
 {% highlight shell%}
