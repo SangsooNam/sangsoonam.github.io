@@ -24,20 +24,20 @@ When you test this code, you can see that it works well. Then, why we need to av
 
 {% include google-adsense-in-article.html %}
 
-To avoid those cases, we need to use another method. Android has a good utility class, `SystemClock`.  `SystemClock.elapsedRealTime()` is the method what we want. This returns elapsed time in milliseconds since the system was booted. This includes time spend in sleep such as CPU off, display dark, and etc.
+To avoid those cases, we need to use another method. Android has a good utility class, `SystemClock`.  `SystemClock.elapsedRealtime()` is the method what we want. This returns elapsed time in milliseconds since the system was booted. This includes time spend in sleep such as CPU off, display dark, and etc.
 
-> `SystemClock.uptimeMillis()` is counted in milliseconds since the system was booted. This looks quite similar with `SystemClock.elapsedRealTime()` but this clock stops when the system enters deep sleep.
+> `SystemClock.uptimeMillis()` is counted in milliseconds since the system was booted. This looks quite similar with `SystemClock.elapsedRealtime()` but this clock stops when the system enters deep sleep.
 
-To sum up, use `SystemClock.elapsedRealTime()` to measure the time interval always!
+To sum up, use `SystemClock.elapsedRealtime()` to measure the time interval always!
 
 {% highlight java %}
 // Store the start time
-long startTime = SystemClock.elapsedRealTime();
+long startTime = SystemClock.elapsedRealtime();
 ...
 // Calculate the time interval when the task is done
-long timeInterval = SystemClock.elapsedRealTime() - startTime;
+long timeInterval = SystemClock.elapsedRealtime() - startTime;
 {% endhighlight %}
 
 ## References
 * [System.currentTimeMillis()](https://developer.android.com/reference/java/lang/System.html#currentTimeMillis())
-* [SystemClock.elapsedRealTime()](https://developer.android.com/reference/android/os/SystemClock.html#elapsedRealtime())
+* [SystemClock.elapsedRealtime()](https://developer.android.com/reference/android/os/SystemClock.html#elapsedRealtime())
