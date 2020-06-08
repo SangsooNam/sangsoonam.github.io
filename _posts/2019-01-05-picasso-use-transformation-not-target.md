@@ -42,7 +42,7 @@ Picasso.get()
 
 2. **Cache**: The loaded `bitmap` is cached by Picasso. However, Picasso doesn't care on a generated bitmap by you. Every time, there will be new created blurred bitmap though working a bitmap is expensive.
 
-3. **Memory**: After creating a blurred bitmap, you cannot call `recycle` on the loaded bitmap. A bitmap is a quite object. As soon as possible, you need to call `recycle` to release memory. Since Picasso cares the loaded bitmap you cannot `recycle` it. There would be two bitmaps in the memory.
+3. **Memory**: After creating a blurred bitmap, you cannot call `recycle` on the loaded bitmap. A bitmap is a quite big object. As soon as possible, you need to call `recycle` to release memory. Since Picasso cares the loaded bitmap you cannot `recycle` it. There would be two bitmaps in the memory.
 
 4. **Debug Indicators**: Picasso uses `PicassoDrawable` internally. It contains a logic to show debug indicators when you enable it. This is no real user impact but you will lose it when you handle `Target` directly.
 
