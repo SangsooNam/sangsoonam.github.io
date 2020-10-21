@@ -33,7 +33,7 @@ $ adb exec-out screencap -p > `date +Screenshot_%s.png`
 
 <p class="code-label">.zshrc</p>
 {% highlight shell%}
-alias asc="adb exec-out screencap -p > `date +Screenshot_%s.png`"
+alias asc='adb exec-out screencap -p > `date +Screenshot_%s.png`'
 {% endhighlight %}
 
 
