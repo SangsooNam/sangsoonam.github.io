@@ -49,3 +49,5 @@ Unfortunately, `date` command in the mac doesn't support `%N`. So, you can't get
 $ brew install coreutils
 $ adb exec-out screencap -p > `gdate +Screenshot_%s.%3N.png`
 {% endhighlight %}
+
+> `brew install coreutils` installs `gdate` on Mac.
