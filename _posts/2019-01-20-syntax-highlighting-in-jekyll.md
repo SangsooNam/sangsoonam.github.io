@@ -86,7 +86,7 @@ _With fenced_code_blocks_
 
 ## Themes
 
-Rouge's HTML output is compatible with stylesheets designed for [Pygmenets](http://pygments.org/), which is another syntax highlighter written in Python. It was released much earlier than Rouge. Rouge's compatibility makes us find available stylesheets easily on the internet. You can find some in [Jekyll Themes](http://jwarby.github.io/jekyll-pygments-themes/languages/java.html). After downloading a stylesheet, copy it to a CSS directory (`/css`). Then, you can import it in the main stylesheet like this:
+Rouge's HTML output is compatible with stylesheets designed for [Pygments](http://pygments.org/), which is another syntax highlighter written in Python. It was released much earlier than Rouge. Rouge's compatibility makes us find available stylesheets easily on the internet. You can find some in [Jekyll Themes](http://jwarby.github.io/jekyll-pygments-themes/languages/java.html). After downloading a stylesheet, copy it to a CSS directory (`/css`). Then, you can import it in the main stylesheet like this:
 
 {% highlight css %}
 @import "fruity.css"
