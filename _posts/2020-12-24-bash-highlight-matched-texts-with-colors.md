@@ -36,7 +36,7 @@ $ echo Hello | highlight 31 H | highlight 32 e | highlight 33 l | highlight 34 o
 ![Highlight Hello](/images/2020/12-24/highlight-hello.png)
 
 
-Though this function works well, I've noticed that it requires quite a long command if I want to highlight multiple texts, as you can see above. Specifying a color is great, but it becomes somewhat cumbersome if it is needed every time. All I need is just to highlight texts with different colors. Based on the `highlight` function, the below helper function simplifies it.
+Though this function works well, it requires quite a long command if I want to highlight multiple texts, as you can see above. Specifying a color is great, but it becomes somewhat cumbersome if it is needed every time. All I need is just to highlight texts with different colors. Based on the `highlight` function, the below helper function simplifies it.
 <p class="code-label">.bash_profile</p>
 {% highlight shell %}
 ht() {

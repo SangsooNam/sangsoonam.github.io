@@ -3,6 +3,16 @@ layout: default
 ---
 
 <div class="home">
+  <div class="search-header">
+    <div class="search-container">
+      <form action="/search.html" method="get">
+        <button type="submit" value="search"><i class="fa fa-search"></i></button>
+        <div class="search-text">
+          <input type="text" id="search-box" name="query" placeholder="Search...">
+        </div>
+     </form>
+    </div>
+  </div>
   <ul class="post-list">
     {% for post in paginator.posts %}
       <li>

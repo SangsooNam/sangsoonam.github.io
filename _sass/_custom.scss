@@ -100,3 +100,35 @@ code.highlighter-rouge {
   border-radius: 6px;
   color: #272822;
 }
+
+.search-container {
+  border: 1px solid $grey-color;
+}
+
+.search-container input[type=text] {
+  padding: 6px;
+  border: none;
+  width: 100%;
+  box-sizing: border-box;
+  display: block;
+  font-size: 16px;
+}
+
+.search-container .search-text {
+  overflow: hidden;
+}
+
+.search-container button {
+  float: right;
+  display: block;
+  box-sizing: border-box;
+  padding: 6px 10px;
+  background: #ddd;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.search-header {
+  margin-bottom: 40px;
+}
