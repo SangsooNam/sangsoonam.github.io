@@ -7,15 +7,15 @@ title: "Git: Restore a Commit with Reflog"
 
 {% highlight shell %}
 ▶ git log --oneline
-b55d6c4 (HEAD -> master) Add files
-65550b9 Add a config file
-0da17c6 init
+a91929a (HEAD -> master) Add skeleton files
+6e9be90 Add .gitignore
+be44318 Init
 
 ▶ git reset HEAD^
 
 ▶ git log --oneline
-65550b9 (HEAD -> master) Add a config file
-0da17c6 init
+6e9be90 (HEAD -> master) Add .gitignore
+be44318 Init
 
 ▶ git st
 On branch master
@@ -34,16 +34,8 @@ These commands are quite useful and powerful. The thing is that I sometimes want
 
 {% highlight shell %}
 ▶ git log --oneline
-b55d6c4 (HEAD -> master) Add files
-65550b9 Add a config file
-0da17c6 init
-
-▶ git reset HEAD^
-
-▶ git log --oneline
-65550b9 (HEAD -> master) Add a config file
-0da17c6 init
-
+6e9be90 (HEAD -> master) Add .gitignore
+be44318 Init
 {% endhighlight %}
 
 {% include google-adsense-in-article.html %}
@@ -52,70 +44,81 @@ Then, what would be the way to restore it? Maybe you pushed a branch or a commit
 
 > Reference logs, or "reflogs", record when the tips of branches and other references were updated in the local repository. 
 
-Basically, `git` doesn't remove commits right away when `git reset` happen. It changes references first. In this example, `HEAD` is now changed to `65550b9`. `git reflog` shows those reference change logs. These logs are stored only locally and `git` will prune reference logs older than 90 days by default. The below command shows the commit id, `b55d6c4`, before running `git reset HEAD^`.
+Basically, `git` doesn't remove commits right away when `git reset` happen. It changes references first. In this example, `HEAD` is now changed to `6e9be90`. `git reflog` shows those reference change logs. These logs are stored only locally and `git` will prune reference logs older than 90 days by default. The below command shows the commit id, `a91929a`, before running `git reset HEAD^`.
 
 
 {% highlight shell %}
 ▶ git reflog
-65550b9 (HEAD -> master) HEAD@{0}: reset: moving to HEAD^
-b55d6c4 HEAD@{1}: commit: Add files
-65550b9 (HEAD -> master) HEAD@{2}: commit: Add a config file
-0da17c6 HEAD@{3}: commit (initial): init
-
+6e9be90 (HEAD -> master) HEAD@{0}: reset: moving to HEAD^
+a91929a HEAD@{1}: commit: Add skeleton files
+6e9be90 (HEAD -> master) HEAD@{2}: commit: Add .gitignore
+be44318 HEAD@{3}: commit (initial): Init
 {% endhighlight %}
 
 `git reset --hard <COMMIT_ID>` would restore that commit and references.
 
 {% highlight shell %}
-▶ git reset --hard b55d6c4
-HEAD is now at b55d6c4 Add files
+▶ git reset --hard a91929a
+HEAD is now at a91929a Add skeleton files
 
 ▶ git log --oneline
-b55d6c4 (HEAD -> master) Add files
-65550b9 Add a config file
-0da17c6 init
+a91929a (HEAD -> master) Add skeleton files
+6e9be90 Add .gitignore
+be44318 Init
 {% endhighlight %}
-
 
 The same way is applicable to restore after `git commit --amend`. This command is used to apply more changes to the existing commit. Technically, `git commit --amend` does't modify an existing commit. It will create a new commit using the changes of the most recent existing commit. Then, `git` adjust references to show only the new commit. `git log` doesn't show that previously existing commit.
 
 
 {% highlight shell %}
 ▶ git commit --amend
-[master bb92f27] Add files
+[master 447608a] Add skeleton files
  ...
 
 ▶ git log --oneline
-bb92f27 (HEAD -> master) Add files
-65550b9 Add a config file
-0da17c6 init
+447608a (HEAD -> master) Add skeleton files
+6e9be90 Add .gitignore
+be44318 Init
 {% endhighlight %}
 
-It means that it would be easy to restore by knowing that previously existing commit id. `git reflog` shows those records. The commit id before amending is `b55d6c4`. `git reset --hard` command will restore that commit and references. 
+It means that it would be easy to restore by knowing that previously existing commit id. `git reflog` shows those records. The commit id before amending is `a91929a`. 
 
 {% highlight shell %}
-▶ git reset --hard b55d6c4
-HEAD is now at b55d6c4 Add files
+▶ git reflog
+447608a (HEAD -> master) HEAD@{0}: commit (amend): Add skeleton files
+a91929a HEAD@{1}: reset: moving to a91929a
+6e9be90 HEAD@{2}: reset: moving to HEAD^
+a91929a HEAD@{3}: commit: Add skeleton files
+6e9be90 HEAD@{4}: commit: Add .gitignore
+be44318 HEAD@{5}: commit (initial): Init
+{% endhighlight %}
+
+`git reset --hard` command will restore that commit and references. 
+
+{% highlight shell %}
+▶ git reset --hard a91929a
+HEAD is now at a91929a Add skeleton files
 
 ▶ git log --oneline
-b55d6c4 (HEAD -> master) Add files
-65550b9 Add a config file
-0da17c6 init
+a91929a (HEAD -> master) Add skeleton files
+6e9be90 Add .gitignore
+be44318 Init
 {% endhighlight %}
 
 One more thing. If you want to learn more on references, try `git cat-file -p <COMMIT_ID|BRANCH>`.
 {% highlight shell %}
-# After `git reset --hard b55d6c4`, the references are the same as `b55d6c4`
+# After `git reset --hard a91929a`, the references are the same as `a91929a`
 ▶ git cat-file -p master
-tree af6e6c5c77580cdec1c2fa9f112490b5ef06a40c
-parent 65550b912a6edec8762843cd7b8aeb11df0fa82e
+tree 3f5d073729ffc62a7a1f9e307ba510a3f4762ea9
+parent 6e9be90d94f41e176f1a5a9a706e14fdb10f1586
 
-# Both have the same parent, `65550b9`
-▶ git cat-file -p b55d6c4
-tree af6e6c5c77580cdec1c2fa9f112490b5ef06a40c
-parent 65550b912a6edec8762843cd7b8aeb11df0fa82e
+# `a91929a` have a parent, `6e9be90`
+▶ git cat-file -p a91929a
+tree 3f5d073729ffc62a7a1f9e307ba510a3f4762ea9
+parent 6e9be90d94f41e176f1a5a9a706e14fdb10f1586
 
-▶ git cat-file -p bb92f27
-tree 575e04f8838d1bcb380d05f2d42b5503db880a7b
-parent 65550b912a6edec8762843cd7b8aeb11df0fa82e
+# Previously amend commit has the same parent, `6e89e90`
+▶ git cat-file -p 447608a
+tree 3f5d073729ffc62a7a1f9e307ba510a3f4762ea9
+parent 6e9be90d94f41e176f1a5a9a706e14fdb10f1586
 {% endhighlight %}
